@@ -17,7 +17,7 @@ alias vimpluginstall='vim +PluginInstall +qall'
 # YOLO
 alias yolo='git add . && git cm -m "#YOLO #thuglife" && git push -f origin'
 
-# relative naviation
+# relative navigation
 L=".."
 R="../"
 for i in {1..7}

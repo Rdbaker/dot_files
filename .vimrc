@@ -70,7 +70,7 @@ Plugin 'CSApprox'
 Plugin 'bling/vim-airline'
 
 "------------------- tagbar ----------------------------
-" show the scope of where you are, :help lightline for help
+" show the scope of where you are, :help tagbar for help
 Plugin 'majutsushi/tagbar'
 
 "------------------- syntastic ----------------------------
