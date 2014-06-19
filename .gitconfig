@@ -1,0 +1,30 @@
+[user]
+  name = Ryan Baker
+  email = ryan.da.baker@gmail.com
+[core]
+  editor = vim
+[web]
+  browser = google-chrome
+[color "branch"]
+  current = yellow bold
+  local = green bold
+  remote = cyan bold
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+[alias]
+  br = branch
+  cm = commit
+  df = diff
+  f = fetch
+  fo = fetch origin
+  co = checkout
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  st = status
+  yolo = push origin master --force
