@@ -16,3 +16,4 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
 # Finally, source all other .bash files
 source ~/.bash_aliases
 source ~/.bashrc
+source ~/.bash_functions
