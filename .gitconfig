@@ -28,3 +28,5 @@
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   st = status
   yolo = push origin master --force
+[push]
+	default = simple
