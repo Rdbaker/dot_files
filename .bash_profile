@@ -11,6 +11,9 @@ fi
 # postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
 
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+
 
 
 # Finally, source all other .bash files
