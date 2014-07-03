@@ -17,7 +17,10 @@ alias vimpluginstall='vim +PluginInstall +qall'
 # YOLO
 alias yolo='git add . && git cm -m "#YOLO #thuglife" && git push -f origin'
 
-# relative navigation
+# update rust
+alias rustit='curl -s http://www.rust-lang.org/rustup.sh | sudo sh'
+
+# relative naviation
 L=".."
 R="../"
 for i in {1..7}

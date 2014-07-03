@@ -50,8 +50,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'elzr/vim-json'
 
 "------------------- vim-javascript --------------------------
-" proper syntax and highlighting for javascript
-Plugin 'pangloss/vim-javascript'
+" enhanced syntax and highlighting for javascript
+Plugin 'jelera/vim-javascript-syntax'
 
 "------------------- JSHint2 ---------------------------------
 " help for js while typing, type :JSHint to use it
@@ -82,6 +82,19 @@ Plugin 'scrooloose/syntastic'
 " apparently this is good.. whatever. :help fugitive for help
 Plugin 'tpope/vim-fugitive'
 
+"------------------- rust.vim -----------------------------
+" syntax highlighting and indentation
+Plugin 'wting/rust.vim'
+
+"------------------- vim-HiLinkTrace ----------------------
+" find out which scope a syntax identifier is in
+Plugin 'gerw/vim-HiLinkTrace'
+
+"------------------- vim-limelight ------------------------
+" highlight the section of code you're writing in!
+Plugin 'junegunn/limelight.vim'
+
+
 
 
 " All of your Plugins must be added before the following line
@@ -93,10 +106,10 @@ filetype plugin indent on    " required
 
 syntax on
 
-set tabstop=2     "tabs are 2 spaces
-set shiftwidth=2  ">> and << behave correctly
+set tabstop=4     "tabs are 4 spaces
+set shiftwidth=4  ">> and << behave correctly
 set expandtab     "correct indentation
-set softtabstop=2 "allows backspacing properly
+set softtabstop=4 "allows backspacing properly
 
 set number    "line numbers
 set ruler     "line and col number in bottom right
@@ -130,9 +143,6 @@ nnoremap ba :bp<CR>
 " delete buffer
 nnoremap <leader>q :bd<CR>
 
-" have git gutter shown well
-highlight clear SignColumn
-
 " airline options
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -153,11 +163,24 @@ colorscheme lavalamp
 " let the status bar show
 set laststatus=2
 
+" have git gutter shown well
+highlight clear SignColumn
+
 " tagbar options
 nnoremap <leader>s :TagbarToggle<CR>
 
-"syntastic options
+" syntastic options
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_jump = 2
 nnoremap <leader>e :Errors<CR>
+
+" HiLinkTrace mapping
+nnoremap <leader>h :HLT<CR>
+
+" put yourself in the limelight!
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+let g:limelight_default_coefficient = 0.7
