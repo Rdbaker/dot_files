@@ -94,6 +94,10 @@ Plugin 'gerw/vim-HiLinkTrace'
 " highlight the section of code you're writing in!
 Plugin 'junegunn/limelight.vim'
 
+"------------------- python-syntax ------------------------
+" syntax highlighting for python
+Plugin 'hdima/python-syntax'
+
 
 
 
@@ -106,10 +110,11 @@ filetype plugin indent on    " required
 
 syntax on
 
-set tabstop=4     "tabs are 4 spaces
-set shiftwidth=4  ">> and << behave correctly
+set tabstop=2     "tabs are 4 spaces
+set shiftwidth=2  ">> and << behave correctly
 set expandtab     "correct indentation
-set softtabstop=4 "allows backspacing properly
+set softtabstop=2 "allows backspacing properly
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 set number    "line numbers
 set ruler     "line and col number in bottom right
@@ -184,3 +189,11 @@ let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient = 0.7
+nnoremap <leader>l :Limelight!!<CR>
+
+" set the backup dir to not be a project dir
+set backupdir=~/.vim/backup/
+set directory=~/.vim/backup/
+
+" use the mouse!
+set mouse=a

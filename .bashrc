@@ -8,3 +8,6 @@ export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
 # source virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
