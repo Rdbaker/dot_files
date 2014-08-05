@@ -118,7 +118,6 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 set number    "line numbers
 set ruler     "line and col number in bottom right
-set hlsearch  "highlight search matches
 
 " reassign leader key to space
 let mapleader = " "
@@ -140,7 +139,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 " next buffer
-nnoremap ne :bn<CR>
+nnoremap fo :bn<CR>
 
 " previous buffer
 nnoremap ba :bp<CR>
@@ -197,3 +196,12 @@ set directory=~/.vim/backup/
 
 " use the mouse!
 set mouse=a
+
+" set rct filetypes to be html
+au BufRead,BufNewFile *.rct setfiletype html
+
+" easymotion highlight as I search
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
