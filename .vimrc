@@ -98,7 +98,9 @@ Plugin 'junegunn/limelight.vim'
 " syntax highlighting for python
 Plugin 'hdima/python-syntax'
 
-
+"------------------- rails-vim ----------------------------
+" rails things for vim
+Plugin 'tpope/vim-rails'
 
 
 " All of your Plugins must be added before the following line
