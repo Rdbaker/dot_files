@@ -141,10 +141,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 " next buffer
-nnoremap fo :bn<CR>
+nnoremap ; :bn<CR>
 
 " previous buffer
-nnoremap ba :bp<CR>
+nnoremap a :bp<CR>
 
 " delete buffer
 nnoremap <leader>q :bd<CR>
