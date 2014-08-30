@@ -9,6 +9,7 @@ alias lk='pwd; ls -laFG'
 alias grep='grep --exclude-dir=".git" --color -I'
 
 # recursively print directory in tree format
+# I won't pretend to know how this works.
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # install the vundle plugins
@@ -17,8 +18,8 @@ alias vimpluginstall='vim +PluginInstall +qall'
 # YOLO
 alias yolo='git add . && git cm -m "#YOLO #thuglife" && git push -f origin'
 
-# update rust
-alias rustit='curl -s http://www.rust-lang.org/rustup.sh | sudo sh'
+# view the current directory in google chrome
+alias chrome='open -a Google\ Chrome `pwd`'
 
 # relative naviation
 L=".."

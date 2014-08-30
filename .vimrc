@@ -199,9 +199,6 @@ set directory=~/.vim/backup/
 " use the mouse!
 set mouse=a
 
-" set rct filetypes to be html
-au BufRead,BufNewFile *.rct setfiletype html
-
 " easymotion highlight as I search
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
