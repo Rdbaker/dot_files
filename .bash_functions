@@ -10,5 +10,10 @@ function killport {
 # set the upstream of a forked git repo
 function syncfork {
   git remote add upstream $1
-  echo $(git remote -v | grep remote)
+  echo $(git remote -v | grep upstream)
+}
+
+function fakefile {
+  #make a file of x MB
+  perl -e "print '0' x 1024 x 1024 x $1" > $1-MB-fake-file.txt
 }
