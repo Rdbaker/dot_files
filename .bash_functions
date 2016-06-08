@@ -18,10 +18,12 @@ function fakefile {
   perl -e "print '0' x 1024 x 1024 x $1" > $1-MB-fake-file.txt
 }
 
+# name the current terminal tab
 function tabname {
   printf "\e]1;$1\a"
 }
 
+# name the current terminal window
 function winname {
   printf "\e]2;$1\a"
 }
@@ -30,4 +32,8 @@ function winname {
 function kssh () {
   IP=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
   ssh $IP
+}
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }

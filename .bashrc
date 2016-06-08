@@ -17,3 +17,8 @@ export PATH="/usr/local/Cellar/ruby/2.2.2/bin:$PATH"
 
 # run the file to register the 'z' command
 . ~/z.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export KSRC_ROOT=/Users/rdbaker/Development/Projects/trunk           # set $KSRC_ROOT, which many pipeline scripts depend on
+source $KSRC_ROOT/bin/kenv.sh
