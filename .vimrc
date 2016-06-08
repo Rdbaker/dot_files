@@ -102,6 +102,14 @@ Plugin 'hdima/python-syntax'
 " rails things for vim
 Plugin 'tpope/vim-rails'
 
+"------------------- NERDTree ----------------------------
+" dude and stuff
+Plugin 'scrooloose/nerdtree'
+
+"------------------- vim-jdaddy ----------------------------
+" pretty json manipulation
+Plugin 'tpope/vim-jdaddy'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -207,3 +215,6 @@ map  N <Plug>(easymotion-prev)
 
 " run :FixWhitespace every time you open a file
 :autocmd BufNewFile * :FixWhitespace
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
