@@ -1,7 +1,6 @@
 "-----------------------------------------------------------------------------------------------
 "---------------------------------------------- PLUGINS ----------------------------------------
 "-----------------------------------------------------------------------------------------------
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -48,10 +47,6 @@ Plugin 'bronson/vim-trailing-whitespace'
 "------------------- vim-json -------------------------------
 " syntax highlighting for json files
 Plugin 'elzr/vim-json'
-
-"------------------- vim-javascript --------------------------
-" enhanced syntax and highlighting for javascript
-Plugin 'jelera/vim-javascript-syntax'
 
 "------------------- JSHint2 ---------------------------------
 " help for js while typing, type :JSHint to use it
@@ -110,6 +105,18 @@ Plugin 'scrooloose/nerdtree'
 " pretty json manipulation
 Plugin 'tpope/vim-jdaddy'
 
+"------------------- vim-flake8 ----------------------------
+" flake8 python linting
+Plugin 'nvie/vim-flake8'
+
+"------------------- vim-pug ----------------------------
+" pug syntax highlighting
+Plugin 'digitaltoad/vim-pug'
+
+"------------------- vim-cjsx ----------------------------
+" cjsx syntax highlighting
+Plugin 'mtscout6/vim-cjsx'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -126,6 +133,14 @@ set expandtab     "correct indentation
 set softtabstop=2 "allows backspacing properly
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
+" use the clipboard
+set clipboard=unnamed
+
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.coffee normal zR
+autocmd BufNewFile,BufReadPost *.py setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.py normal zR
+
 set number    "line numbers
 set ruler     "line and col number in bottom right
 
@@ -137,16 +152,16 @@ inoremap jk <Esc>
 
 " changing windows on splits
 " left
-nnoremap <C-H> <C-W><C-H>
+nmap <BS> <C-W>h
 
 " down
-nnoremap <C-J> <C-W><C-J>
+nnoremap <C-J> <C-W>j
 
 " up
-nnoremap <C-K> <C-W><C-K>
+nnoremap <C-K> <C-W>k
 
 " right
-nnoremap <C-L> <C-W><C-L>
+nnoremap <C-L> <C-W>l
 
 " next buffer
 nnoremap ; :bn<CR>
@@ -218,3 +233,6 @@ map  N <Plug>(easymotion-prev)
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" run flake8 every time I write to a python file
+autocmd BufWritePost *.py call Flake8()
