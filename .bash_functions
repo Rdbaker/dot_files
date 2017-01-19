@@ -37,3 +37,12 @@ function kssh () {
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+
+function vpip {
+  pypath=$(which python)
+  if [ $pypath == "/usr/bin/python" ]; then
+    echo "Tried installing outside of virtualenv, bailing."
+  else
+    pip install -r $3
+  fi
+}
